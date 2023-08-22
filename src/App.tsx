@@ -1,6 +1,14 @@
 import React from 'react';
+import tw, { styled } from 'twin.macro';
 import logo from './logo.svg';
 import './App.css';
+
+const Container = tw.div`bg-blue-500 p-4`;
+
+const Button = styled.button`
+  ${tw`bg-green-500 text-white font-bold py-2 px-4 rounded`}
+  ${tw`bg-blue-500`}
+`;
 
 function App() {
   return (
@@ -19,6 +27,10 @@ function App() {
           Learn React
         </a>
       </header>
+      <Container>
+        <Button>Normal Button</Button>
+        <Button>Primary Button</Button>
+      </Container>
     </div>
   );
 }
