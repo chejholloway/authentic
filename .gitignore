@@ -23,3 +23,10 @@ yarn-debug.log*
 yarn-error.log*
 
 .vscode/*
+
+.yarn
+.gitignore
+yarn.lock
+
+package-lock.json
+.eslintcache
