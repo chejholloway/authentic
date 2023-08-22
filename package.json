@@ -25,7 +25,8 @@
     "lint-staged": "lint-staged --config lint-staged.js",
     "prepare": "husky install",
     "start": "react-scripts start",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "test:jest": "jest"
   },
   "eslintConfig": {
     "extends": [
