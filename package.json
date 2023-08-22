@@ -27,8 +27,7 @@
     "lint-staged": "lint-staged --config lint-staged.js",
     "prepare": "husky install",
     "start": "react-scripts start",
-    "test": "react-scripts test",
-    "test:jest": "jest"
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": [
@@ -75,7 +74,7 @@
     "hooks": {
       "commit-msg": "commitlint",
       "pre-commit": "lint-staged",
-      "pre-push": "npm run test:jest"
+      "pre-push": "npm run test"
     }
   }
 }
