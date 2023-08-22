@@ -20,13 +20,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
     "commitlint": "commitlint --edit",
-    "test": "react-scripts test",
+    "lint-staged": "lint-staged --config lint-staged.js",
     "prepare": "husky install",
-    "prettier:check": "prettier --check .",
-    "prettier:write": "prettier --write ."
+    "start": "react-scripts start",
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": [
