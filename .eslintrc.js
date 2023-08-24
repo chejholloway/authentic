@@ -18,7 +18,6 @@ module.exports = {
     'airbnb',
     'airbnb/hooks',
     'airbnb-typescript',
-    'plugin:tailwindcss/recommended',
     'prettier'
   ],
   overrides: [
@@ -32,7 +31,7 @@ module.exports = {
     'no-console': 'off',
     'import/prefer-default-export': 'off',
     '@typescript-eslint/camelcase': ['off'],
-    camelcase: ['off'],
+    'camelcase': ['off'],
     'react/jsx-props-no-spreading': ['off'],
     'jsx-a11y/no-static-element-interactions': 'off',
     'react/prop-types': ['off'],
@@ -62,6 +61,14 @@ module.exports = {
         ignoreTemplateLiterals: true,
         ignoreRegExpLiterals: true
       }
-    ]
+    ],
+    'react/function-component-definition': [
+      'error',
+      {
+        namedComponents: ['function-declaration', 'arrow-function'],
+        unnamedComponents: 'arrow-function'
+      }
+    ],
+    'arrow-body-style': ['error', 'as-needed']
   }
 };
