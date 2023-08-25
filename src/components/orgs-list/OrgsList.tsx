@@ -12,6 +12,32 @@ import {
 import Org from "../../types/Org";
 import Developer from "../../types/Developer";
 
+
+/**
+ * Renders a list of organizations associated with a developer.
+ *
+ * This component takes an array of `Org` objects and displays a list of organizations
+ * with their avatars. It's typically used to show the organizations a developer is part of.
+ *
+ * @component
+ * @example
+ * ```tsx
+ * const orgs: Org[] = [
+ *   {
+ *     id: 1,
+ *     login: "exampleOrg",
+ *     avatar_url: "https://example.com/org-avatar.jpg"
+ *   },
+ *   // ...more organizations
+ * ];
+ *
+ * <OrgsList org={orgs} />
+ * ```
+ *
+ * @param {object} props - The component props.
+ * @param {Org[]} props.org - An array of `Org` objects representing organizations.
+ */
+
 interface OrgsListProps {
   developer: Developer | undefined;
   org: Org[] | undefined;

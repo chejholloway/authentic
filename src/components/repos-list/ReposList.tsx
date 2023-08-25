@@ -12,6 +12,40 @@ import {
 import Repo from "../../types/Repo";
 import Developer from "../../types/Developer";
 
+/**
+ * Renders a list of repositories associated with a developer.
+ *
+ * This component takes an array of `Repo` objects and a `Developer` object
+ * and displays a list of repositories with their names and the developer's avatar.
+ * It's typically used to show the repositories owned by a developer.
+ *
+ * @component
+ * @example
+ * ```tsx
+ * const developer: Developer = {
+ *   id: 1,
+ *   login: "exampleDev",
+ *   avatar_url: "https://example.com/dev-avatar.jpg"
+ *   // ...other properties
+ * };
+ *
+ * const repos: Repo[] = [
+ *   {
+ *     id: 1,
+ *     name: "example-repo",
+ *     // ...other properties
+ *   },
+ *   // ...more repositories
+ * ];
+ *
+ * <ReposList developer={developer} repos={repos} />
+ * ```
+ *
+ * @param {object} props - The component props.
+ * @param {Developer} props.developer - The `Developer` object associated with the repositories.
+ * @param {Repo[]} props.repos - An array of `Repo` objects representing repositories.
+ */
+
 interface ReposListProps {
   developer: Developer | undefined;
   repos: Repo[] | undefined;

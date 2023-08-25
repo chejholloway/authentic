@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`GithubIcon matches snapshot 1`] = `
-<img
-  alt="Github Text Logo"
-  className="h-10 object-cover test-class"
-  src="github-full-svgrepo-com.svg"
-/>
-`;
