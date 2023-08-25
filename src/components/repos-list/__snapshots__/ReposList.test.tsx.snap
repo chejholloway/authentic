@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ReposList> should render component 1`] = `
+<div>
+  <div
+    class="text-gray-700"
+  >
+    <h3
+      class="text-center"
+    />
+    <p>
+      No repositories available.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`<ReposList> should render component with props 1`] = `
+<div>
+  <div
+    class="text-gray-700"
+  >
+    <h3
+      class="text-center"
+    />
+    <div />
+    <div />
+  </div>
+</div>
+`;

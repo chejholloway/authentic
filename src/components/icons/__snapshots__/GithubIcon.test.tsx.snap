@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GithubIcon> should render component 1`] = `
+<div>
+  <img
+    alt="Github Text Logo"
+    class="h-10 object-cover undefined"
+    src="github-full-svgrepo-com.svg"
+  />
+</div>
+`;
+
+exports[`<GithubIcon> should render component with props 1`] = `
+<div>
+  <img
+    alt="Github Text Logo"
+    class="h-10 object-cover dummy-class"
+    src="github-full-svgrepo-com.svg"
+  />
+</div>
+`;

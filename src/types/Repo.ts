@@ -6,5 +6,5 @@ export default interface Repo {
   name: string;
   full_name: string;
   private: boolean;
-  owner: Owner;
+  owner?: Owner;
 }

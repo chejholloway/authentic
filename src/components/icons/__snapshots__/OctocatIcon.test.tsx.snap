@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<OctocatIcon> should render component 1`] = `
+<div>
+  <img
+    alt="Github Octocat"
+    class="h-10 object-cover undefined"
+    src="github-octocat-svgrepo-com.svg"
+  />
+</div>
+`;
+
+exports[`<OctocatIcon> should render component with props 1`] = `
+<div>
+  <img
+    alt="Github Octocat"
+    class="h-10 object-cover dummy-class"
+    src="github-octocat-svgrepo-com.svg"
+  />
+</div>
+`;
