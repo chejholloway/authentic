@@ -1,12 +1,19 @@
 {
-  "out": "docs",
   "entryPoints": [
-    "src/index.tsx"
+    "src/**/**/*.tsx"
   ],
   "exclude": [
     "**/node_modules/**",
     "**/*.d.ts",
     "**/*.test.ts",
     "**/*.spec.ts"
-  ]
+  ],
+  "excludeExternals": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "includeVersion": true,
+  "name": "Real Frontend Test",
+  "out": "docs",
+  "theme": "default",
+  "tsconfig": "tsconfig.json"
 }

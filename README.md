@@ -62,10 +62,12 @@ what you come up with! Good luck!
 
 ## License
 
-At CodeScreen, we strongly value the integrity and privacy of our assessments. As a result, this repository is under exclusive copyright, which means you **do not** have permission to share your solution to this test publicly (i.e., inside a public GitHub/GitLab repo, on Reddit, etc.). <br>
+At CodeScreen, we strongly value the integrity and privacy of our assessments. As a result, this repository is under exclusive copyright, which means you **do not** have permission to share your solution to this test publicly (i.e., inside a public GitHub/GitLab repo, on Reddit, etc.). <br/>
 
 ## Submitting your solution
 
-Please push your changes to the `main branch` of this repository. You can push one or more commits. <br>
+Please push your changes to the `main branch` of this repository. You can push one or more commits.
+
+<br/>
 
 Once you are finished with the task, please click the `Submit Solution` link on <a href="https://app.codescreen.com/candidate/af9736c1-2614-4811-a677-cfe9d9696340" target="_blank">this screen</a>.

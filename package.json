@@ -1,11 +1,21 @@
 {
-  "name": "cra-template",
-  "version": "0.1.0",
-  "private": true,
+  "browserslist": {
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ]
+  },
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@material-tailwind/react": "^2.1.1",
+    "@react-docgen/cli": "^1.0.3",
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -15,6 +25,7 @@
     "@types/react-dom": "^18.0.0",
     "@types/react-router-dom": "^5.3.3",
     "axios": "^1.4.0",
+    "docz": "^2.4.0",
     "dotenv": "^16.3.1",
     "msw": "^1.2.4",
     "react": "^18.2.0",
@@ -28,32 +39,8 @@
     "web-vitals": "^2.1.4",
     "webpack": "^5.88.2"
   },
-  "scripts": {
-    "build": "react-scripts build",
-    "commitlint": "commitlint --edit",
-    "generate-docs": "npx react-docgen-typescript src/**/*.tsx --outFile docs/components.json",
-    "start": "react-scripts start",
-    "test": "react-scripts test"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "devDependencies": {
+    "@babel/core": "~7.20.0",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/preset-react": "^7.22.5",
     "@babel/preset-typescript": "^7.22.11",
@@ -65,6 +52,7 @@
     "@types/testing-library__jest-dom": "^6.0.0",
     "@typescript-eslint/eslint-plugin": "^6.4.1",
     "@typescript-eslint/parser": "^6.4.1",
+    "babel-plugin-lodash": "^3.3.4",
     "eslint": "^8.47.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.1.0",
@@ -82,6 +70,28 @@
     "react-docgen-typescript": "^2.2.2",
     "react-test-renderer": "^18.2.0",
     "tailwindcss": "^3.3.3",
-    "ts-jest": "^29.1.1"
-  }
+    "ts-jest": "^29.1.1",
+    "typedoc": "^0.24.8"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "name": "cra-template",
+  "overrides": {
+    "babel-plugin-lodash": {
+      "@babel/types": "~7.20.0"
+    }
+  },
+  "private": true,
+  "scripts": {
+    "build": "react-scripts build",
+    "commitlint": "commitlint --edit",
+    "generate-docs": "typedoc",
+    "start": "react-scripts start",
+    "test": "react-scripts test"
+  },
+  "version": "0.1.0"
 }

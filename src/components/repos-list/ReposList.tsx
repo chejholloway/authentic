@@ -40,7 +40,7 @@ import Developer from "../../types/Developer";
  *
  * <ReposList developer={developer} repos={repos} />
  * ```
- *
+ * @defaultprops
  * @param {object} props - The component props.
  * @param {Developer} props.developer - The `Developer` object associated with the repositories.
  * @param {Repo[]} props.repos - An array of `Repo` objects representing repositories.

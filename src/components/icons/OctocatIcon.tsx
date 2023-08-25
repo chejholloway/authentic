@@ -11,7 +11,7 @@ import octocat from "../../assets/images/github-octocat-svgrepo-com.svg";
  * ```tsx
  * <OctocatIcon className="text-gray-600" />
  * ```
- *
+ * @defaultprops
  * @param {object} props - The component props.
  * @param {string} [props.className] - An optional CSS class name to apply custom styling.
  */

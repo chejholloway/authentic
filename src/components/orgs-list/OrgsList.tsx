@@ -33,7 +33,7 @@ import Developer from "../../types/Developer";
  *
  * <OrgsList org={orgs} />
  * ```
- *
+ * @defaultprops
  * @param {object} props - The component props.
  * @param {Org[]} props.org - An array of `Org` objects representing organizations.
  */

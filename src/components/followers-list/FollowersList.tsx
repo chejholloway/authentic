@@ -19,18 +19,25 @@ import Follower from '../../types/Follower';
  *     login: "exampleUser",
  *     avatar_url: "https://example.com/avatar.jpg"
  *   },
- *   // ...more followers
+ *   ...more followers
  * ];
  *
  * <FollowersList followers={followers} />
  * ```
- *
+ * @defaultprops
  * @param {object} props - The component props.
  * @param {Follower[]} props.followers - An array of `Follower` objects representing followers.
  */
 interface FollowersListProps {
   followers: Follower[] | undefined;
 }
+
+/**
+ * Renders a list of followers with their avatars.
+ * @defaultprops
+ * @param {FollowersListProps} props - The component props.
+ * @returns {JSX.Element} The rendered component.
+ */
 
 const FollowersList: React.FC<FollowersListProps> = ({ followers }) => {
   return (
