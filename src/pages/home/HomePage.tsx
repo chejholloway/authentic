@@ -6,6 +6,20 @@ import Navbar from '../../components/navbar/Navbar';
 import Developer from '../../types/Developer';
 import { useGetTopDevelopersQuery } from '../../services/github';
 
+/**
+ * Page component displaying a list of top GitHub developers.
+ *
+ * This component fetches and displays a list of top GitHub developers. It uses the
+ * `useGetTopDevelopersQuery` from the GitHub service to fetch data. The UI organizes
+ * developers in a grid, with their avatars and usernames displayed.
+ *
+ * @component
+ * @example
+ * ```tsx
+ * <HomePage />
+ * ```
+ */
+
 const HomePage: React.FC = () => {
   const { data: developers } = useGetTopDevelopersQuery({
     limit: 20

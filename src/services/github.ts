@@ -1,5 +1,19 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
+/**
+ * The GitHub API configuration.
+ *
+ * This API configuration uses the `createApi` function from `@reduxjs/toolkit/query`
+ * to create an API instance for interacting with the GitHub API. It defines several
+ * endpoints for querying different types of data from the GitHub API.
+ *
+ * @example
+ * ```tsx
+ * import { useGetTopDevelopersQuery } from './path-to-githubApi';
+ *
+ * const { data: developers } = useGetTopDevelopersQuery({ limit: 10 });
+ * ```
+ */
 export const githubApi = createApi({
   reducerPath: 'githubApi',
   baseQuery: fetchBaseQuery({
