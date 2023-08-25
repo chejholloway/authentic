@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OctocatIcon matches snapshot 1`] = `
+<img
+  alt="Github Octocat"
+  className="h-10 object-cover test-class"
+  src="github-octocat-svgrepo-com.svg"
+/>
+`;

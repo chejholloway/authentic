@@ -1,37 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<FollowersList> should render component 1`] = `
-<div>
+exports[`<FollowersList> renders "No followers available." when followers are undefined 1`] = `
+<DocumentFragment>
   <div
     class="text-gray-700"
   >
     <h3
       class="text-center"
-    />
+    >
+      <p>
+        Followers
+      </p>
+    </h3>
     <div
       class="flex flex-wrap space-x-4"
     >
-      <div />
-      <div />
+      <p>
+        No followers available.
+      </p>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
-exports[`<FollowersList> should render component with props 1`] = `
-<div>
+exports[`<FollowersList> renders followers list with data 1`] = `
+<DocumentFragment>
   <div
     class="text-gray-700"
   >
     <h3
       class="text-center"
-    />
+    >
+      <p>
+        Followers
+      </p>
+    </h3>
     <div
       class="flex flex-wrap space-x-4"
     >
-      <div />
-      <div />
+      <div>
+        <a
+          href="/"
+        >
+          <img
+            alt="follower1"
+          />
+        </a>
+      </div>
+      <div>
+        <a
+          href="/"
+        >
+          <img
+            alt="follower2"
+          />
+        </a>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

@@ -1,20 +1,21 @@
-import { render } from '@testing-library/react';
-import React from 'react';
-import github from "../../assets/images/github-full-svgrepo-com.svg";
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import renderer from "react-test-renderer"; // Import react-test-renderer
 import GithubIcon from "./GithubIcon";
 
-jest.mock("../../assets/images/github-full-svgrepo-com.svg");
+describe("GithubIcon", () => {
+  test("renders Github icon", () => {
+    render(<GithubIcon className="test-class" />);
 
-describe('<GithubIcon>', () => {
-  it('should render component', () => {
-    const { container } = render(<GithubIcon />);
-
-    expect(container).toMatchSnapshot();
+    // Assert that the Github icon image is rendered with the provided class
+    const githubIcon = screen.getByAltText("Github Text Logo");
+    expect(githubIcon).toBeInTheDocument();
+    expect(githubIcon).toHaveClass("h-10 object-cover test-class");
   });
 
-  it('should render component with props', () => {
-    const { container } = render(<GithubIcon className="dummy-class" />);
-
-    expect(container).toMatchSnapshot();
+  test("matches snapshot", () => {
+    // Use react-test-renderer to create a snapshot of the component
+    const tree = renderer.create(<GithubIcon className="test-class" />).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

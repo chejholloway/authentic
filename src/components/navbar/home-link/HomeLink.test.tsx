@@ -1,14 +1,21 @@
-import { render } from '@testing-library/react';
-import React from 'react';
-import { Link } from "react-router-dom";
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import { BrowserRouter as Router } from "react-router-dom";
+
 import HomeLink from "./HomeLink";
 
-jest.mock("react-router-dom");
+describe("HomeLink", () => {
+  test("renders home link", () => {
+    render(
+      <Router>
+        <HomeLink />
+      </Router>
+    );
 
-describe('<HomeLink>', () => {
-  it('should render component', () => {
-    const { container } = render(<HomeLink />);
-
-    expect(container).toMatchSnapshot();
+    // Assert that the home link is rendered
+    const homeLink = screen.getByText("Home");
+    expect(homeLink).toBeInTheDocument();
+    expect(homeLink).toHaveAttribute("href", "/");
+    expect(homeLink).toHaveClass("text-black mr-4 hover:text-gray-400 transition duration-300");
   });
 });

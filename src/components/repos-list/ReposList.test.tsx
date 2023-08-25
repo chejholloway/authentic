@@ -1,6 +1,6 @@
-import { render } from '@testing-library/react';
 import React from 'react';
-import { Link } from "react-router-dom";
+import { render } from '@testing-library/react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import {
   List,
   ListItem,
@@ -8,51 +8,64 @@ import {
   Avatar,
   Card,
   Typography,
-} from "@material-tailwind/react";
-import Repo from "../../types/Repo";
-import Developer from "../../types/Developer";
-import ReposList from "./ReposList";
+} from '@material-tailwind/react';
+import ReposList from './ReposList';
+import Repo from '../../types/Repo';
+import Developer from '../../types/Developer';
 
-jest.mock("react-router-dom");
-jest.mock("@material-tailwind/react");
-jest.mock("../../types/Repo");
-jest.mock("../../types/Developer");
+jest.mock('@material-tailwind/react', () => ({
+  Avatar: ({ alt }: { alt: string }) => <img alt={alt} />,
+  Typography: ({ children }: { children: React.ReactNode }) => <p>{children}</p>,
+  List: ({ children }: { children: React.ReactNode }) => <ul>{children}</ul>,
+  ListItem: ({ children }: { children: React.ReactNode }) => <li>{children}</li>,
+  ListItemPrefix: ({ children }: { children: React.ReactNode }) => (
+    <div>{children}</div>
+  ),
+  Card: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
+  Link: ({ children }: { children: React.ReactNode }) => <a>{children}</a>,
+}));
 
 describe('<ReposList>', () => {
-  it('should render component', () => {
-    const { container } = render(
-      <ReposList developer={undefined} repos={undefined} />
-    );
-
-    expect(container).toMatchSnapshot();
-  });
-
-  it('should render component with props', () => {
-    const mockDeveloper: Developer = {
-      "login": "ruanyf",
-      "avatar_url": "https://avatars.githubusercontent.com/u/905434?v=4",
-    };
-
+  test('renders repositories list with data', () => {
     const mockRepos: Repo[] = [
       {
-        "full_name": "diego3g/05-design-system",
-        "id": 2254734,
-        "name": "05-design-system",
-        "node_id": "MDQ6VXNlcjIyNTQ3MzE=",
-        "private": false,
+        id: 1,
+        name: 'repo1',
       },
       {
-        "full_name": "diego3g/05-design-system",
-        "id": 2254731,
-        "name": "05-design-system",
-        "node_id": "MDQ6VXNlcjIyNTQ3MzE=",
-        "private": false
-    }];
+        id: 2,
+        name: 'repo2',
+      },
+    ];
 
-    const { container } = render(
-      <ReposList developer={mockDeveloper} repos={mockRepos} />
+    const mockDeveloper: Developer = {
+      id: 1,
+      login: 'developer1',
+      avatar_url: 'developer1-avatar-url',
+    };
+
+    const { asFragment } = render(
+      <Router>
+        <ReposList developer={mockDeveloper} repos={mockRepos} />
+      </Router>
     );
 
-    expect(container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('renders "No repositories available." when repos are undefined', () => {
+    const mockDeveloper: Developer = {
+      id: 1,
+      login: 'developer1',
+      avatar_url: 'developer1-avatar-url',
+    };
+
+    const { asFragment } = render(
+      <Router>
+        <ReposList developer={mockDeveloper} repos={undefined} />
+      </Router>
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });

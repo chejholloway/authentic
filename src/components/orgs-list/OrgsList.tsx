@@ -28,7 +28,7 @@ const OrgsList: React.FC<OrgsListProps> = ({ org }) => {
           <div key={org.id}>
             <Link to={"/"}>
               <Card className="w-full">
-                <List>
+                <List key={org.id}>
                   <ListItem>
                     <ListItemPrefix>
                       <Avatar
