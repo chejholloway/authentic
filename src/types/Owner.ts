@@ -4,18 +4,18 @@
  * This interface defines the structure of information associated with a GitHub organization.
  * It includes details such as the organization's name, profile URL, avatar URL, and more.
  *
- * @interface Org
+ * @interface Owner
  * @example
  * ```ts
- * const organization: Org = {
- *   login: "exampleOrg",
+ * const organization: Owner = {
+ *   login: "exampleOwner",
  *   id: 789,
  *   avatar_url: "https://example.com/org-avatar.jpg",
  *   // ...other properties
  * };
  * ```
  */
-export default interface Org {
+export default interface Owner {
   login: string;
   id: number;
   node_id: string;

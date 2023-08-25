@@ -1,0 +1,22 @@
+# Redux Store Configuration
+
+Redux store configuration.
+
+This configuration uses the `configureStore` function from `@reduxjs/toolkit` to create
+a Redux store. It sets up the GitHub API reducer and middleware, as well as a custom logger middleware.
+
+## Store Configuration
+
+- **Type:** Redux Store Configuration Object
+- **Reducer:** `githubApi.reducer`
+- **Middleware:** GitHub API Middleware, Custom Logger Middleware
+
+### Example
+
+```tsx
+import store from './path-to-store';
+
+// Use the Redux store in your app
+<Provider store={store}>
+  Your app components
+</Provider>
