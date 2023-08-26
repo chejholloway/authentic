@@ -8,24 +8,24 @@
  * @example
  * ```ts
  * const organization: Owner = {
- *   avatar_url: "https://example.com/org-avatar.jpg",
- *   id: 789,
  *   login: "exampleOwner",
+ *   id: 789,
+ *   avatar_url: "https://example.com/org-avatar.jpg",
  *   // ...other properties
  * };
  * ```
  */
 export default interface Owner {
-  avatar_url: string;
-  description?: string;
-  events_url: string;
-  hooks_url?: string;
-  id: number;
-  issues_url?: string;
   login: string;
-  members_url?: string;
+  id: number;
   node_id: string;
-  public_members_url?: string;
-  repos_url: string;
   url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
 }

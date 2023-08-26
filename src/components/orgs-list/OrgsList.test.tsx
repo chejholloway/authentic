@@ -54,7 +54,6 @@ const mockOrgs: Org[] = [
 const mockDeveloper: Developer = {
   "login": "ruanyf",
   "avatar_url": "https://api.github.com/users/ruanyf/starred{/owner}{/repo}",
-  "repos_url": 'https://api.github.com/users/example/repos',
 };
 
 describe('<OrgsList>', () => {
