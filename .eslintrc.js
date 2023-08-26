@@ -1,23 +1,37 @@
-{
+module.exports = {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "jest": true
     },
     "extends": [
+        "eslint:recommended",
         "plugin:react/recommended",
-        "airbnb"
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "ignorePatterns": ["**/*.css", "**/*.scss", "**/*.mdx"],
+    "overrides": [
+        {
+            files: ['./src/styled.d.ts'],
+            rules: {
+                '@typescript-eslint/no-explicit-any': 'off',
+            },
+        },
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 12,
+        "ecmaVersion": "latest",
         "sourceType": "module"
     },
     "plugins": [
         "react",
         "@typescript-eslint"
     ],
-    "rules": {}
+    "rules": {
+    },
+    "settings": {
+        "react": {
+        "version": "detect"
+        }
+    }
 }

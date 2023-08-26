@@ -102,8 +102,10 @@
   "private": true,
   "scripts": {
     "build": "react-scripts build",
-    "commitlint": "commitlint --edit",
     "generate-docs": "typedoc",
+    "lint:fix": "eslint src/* --fix",
+    "lint:quiet": "eslint src/* --quiet",
+    "lint": "eslint src/*",
     "start": "react-scripts start",
     "test": "react-scripts test"
   },
