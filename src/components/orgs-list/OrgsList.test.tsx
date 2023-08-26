@@ -11,11 +11,13 @@ import {
 } from "@material-tailwind/react";
 import Org from "../../types/Org";
 import Developer from "../../types/Developer";
+import Repo from '../../types/Repo';
 import OrgsList from "./OrgsList";
 
 jest.mock("react-router-dom");
 jest.mock("@material-tailwind/react");
 jest.mock("../../types/Org");
+jest.mock('../../types/Repo');
 jest.mock("../../types/Developer");
 
 const mockOrgs: Org[] = [
@@ -58,7 +60,7 @@ const mockDeveloper: Developer = {
 describe('<OrgsList>', () => {
   it('should render component', () => {
     const { container } = render(
-      <OrgsList developer={mockDeveloper} org={mockOrgs} />
+      <OrgsList developer={mockDeveloper} orgs={mockOrgs}/>
     );
 
     expect(container).toMatchSnapshot();

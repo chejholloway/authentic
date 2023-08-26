@@ -51,13 +51,13 @@ const DeveloperDetailPage: React.FC = () => {
           <div className="grid grid-cols-2 gap-8">
             <div className="col-span-1">
               {/* <!-- Left column content here --> */}
-              <ReposList developer={developer} repos={repos} />
+              <ReposList developer={developer} repos={repos}/>
             </div>
             <div className="col-span-1">
               {/* <!-- Right column content here -->*/}{" "}
               <div className="text-gray-700">
                 <FollowersList followers={fiveFollowers} />
-                <OrgsList developer={developer} org={orgs} />
+                <OrgsList developer={developer} orgs={orgs}/>
               </div>
             </div>
           </div>
