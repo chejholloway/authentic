@@ -17,20 +17,7 @@ const selectRandomFollowers = (followers: Follower[], count: number) => {
   const shuffledFollowers = followers.slice().sort(() => 0.5 - Math.random());
   return shuffledFollowers.slice(0, count);
 };
-/**
- * Page component displaying detailed information about a developer.
- *
- * This component fetches and displays detailed information about a developer, including
- * their repositories, organizations, and followers. It uses various queries from the GitHub
- * service to fetch data. The UI is organized with repositories on the left and organizations
- * and selected random followers on the right.
- *
- * @component
- * @example
- * ```tsx
- * <DeveloperDetailPage />
- * ```
- */
+
 const DeveloperDetailPage: React.FC = () => {
   const { username } = useParams();
   const { data: developer } = useGetDeveloperDetailsQuery(username);
@@ -51,13 +38,13 @@ const DeveloperDetailPage: React.FC = () => {
           <div className="grid grid-cols-2 gap-8">
             <div className="col-span-1">
               {/* <!-- Left column content here --> */}
-              <ReposList developer={developer} repos={repos}/>
+              <ReposList developer={developer} repos={repos} />
             </div>
             <div className="col-span-1">
               {/* <!-- Right column content here -->*/}{" "}
               <div className="text-gray-700">
                 <FollowersList followers={fiveFollowers} />
-                <OrgsList developer={developer} orgs={orgs}/>
+                <OrgsList developer={developer} org={orgs} />
               </div>
             </div>
           </div>

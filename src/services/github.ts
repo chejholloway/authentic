@@ -1,41 +1,28 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-/**
- * The GitHub API configuration.
- *
- * This API configuration uses the `createApi` function from `@reduxjs/toolkit/query`
- * to create an API instance for interacting with the GitHub API. It defines several
- * endpoints for querying different types of data from the GitHub API.
- *
- * @example
- * ```tsx
- * import { useGetTopDevelopersQuery } from './path-to-githubApi';
- *
- * const { data: developers } = useGetTopDevelopersQuery({ limit: 10 });
- * ```
- */
 export const githubApi = createApi({
-  reducerPath: 'githubApi',
+  reducerPath: "githubApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: process.env.REACT_APP_GITHUB_API_BASE_URL
+    baseUrl: process.env.REACT_APP_GITHUB_API_BASE_URL,
   }),
   endpoints: (builder) => ({
     getTopDevelopers: builder.query({
-      query: (limit = 20) => process.env.REACT_APP_GITHUB_USERS_QUERY + `${limit}}`
+      query: (limit = 20) =>
+        process.env.REACT_APP_GITHUB_USERS_QUERY + `${limit}}`,
     }),
     getDeveloperDetails: builder.query({
-      query: (username) => `/users/${username}`
+      query: (username) => `/users/${username}`,
     }),
     getDeveloperRepos: builder.query({
-      query: (username) => `/users/${username}/repos`
+      query: (username) => `/users/${username}/repos`,
     }),
     getDeveloperOrgs: builder.query({
-      query: (username) => `/users/${username}/orgs`
+      query: (username) => `/users/${username}/orgs`,
     }),
     getDeveloperFollowers: builder.query({
-      query: (username) => `/users/${username}/followers`
-    })
-  })
+      query: (username) => `/users/${username}/followers`,
+    }),
+  }),
 });
 
 export const {
@@ -43,5 +30,5 @@ export const {
   useGetDeveloperFollowersQuery,
   useGetDeveloperOrgsQuery,
   useGetDeveloperReposQuery,
-  useGetTopDevelopersQuery
+  useGetTopDevelopersQuery,
 } = githubApi;

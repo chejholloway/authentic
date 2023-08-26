@@ -6,7 +6,8 @@ describe('Developer interface', () => {
   it('should have the required properties', () => {
     const developer: Developer = {
       avatar_url: 'https://example.com/avatar.png',
-      login: 'testUser'
+      login: 'testUser',
+      twitter_username: '@testser'
     };
 
     expect(developer.avatar_url).toBeDefined();

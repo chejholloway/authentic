@@ -21,15 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
+.vscode
 .vscode/*
 
 .yarn
-.gitignore
-yarn.lock
-
-package-lock.json
-.eslintcache
-/src/app/__snapshots__
-/src/components/**/__snapshots__
-.env
+/.docz

@@ -54,12 +54,13 @@ const mockOrgs: Org[] = [
 const mockDeveloper: Developer = {
   "login": "ruanyf",
   "avatar_url": "https://api.github.com/users/ruanyf/starred{/owner}{/repo}",
+  "twitter_username": '@testser'
 };
 
 describe('<OrgsList>', () => {
   it('should render component', () => {
     const { container } = render(
-      <OrgsList developer={mockDeveloper} orgs={mockOrgs}/>
+      <OrgsList developer={mockDeveloper} org={mockOrgs}/>
     );
 
     expect(container).toMatchSnapshot();

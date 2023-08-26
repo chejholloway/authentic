@@ -1,25 +1,37 @@
-import React from 'react';
-import { Avatar } from '@material-tailwind/react';
-import Follower from '../../types/Follower';
-import List from '../list/List';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Avatar, Typography } from "@material-tailwind/react";
+
+import Follower from "../../types/Follower";
 
 interface FollowersListProps {
   followers: Follower[] | undefined;
 }
 
 const FollowersList: React.FC<FollowersListProps> = ({ followers }) => {
-  const renderFollower = (follower: Follower) => (
-    <Avatar
-      variant='circular'
-      title={`${follower.login}'s Avatar`}
-      alt={follower.login}
-      src={follower.avatar_url}
-    />
-  );
-
   return (
-    <div id="followers-list" className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <List data={followers} renderItem={renderFollower} developer={null} title='Followers' />
+    <div className="text-gray-700">
+      <h3 className="text-center">
+        <Typography className="font-normal">Followers</Typography>
+      </h3>
+      <div className="flex flex-wrap space-x-4">
+        {followers ? (
+          followers.map((follower) => (
+            <div key={follower.id}>
+              <Link to={"/"}>
+                <Avatar
+                  variant="circular"
+                  title={`${follower?.login}'s Avatar`}
+                  alt={follower?.login}
+                  src={follower?.avatar_url}
+                />
+              </Link>
+            </div>
+          ))
+        ) : (
+          <p>No followers available.</p>
+        )}
+      </div>
     </div>
   );
 };
