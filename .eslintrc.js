@@ -32,13 +32,19 @@ module.exports = {
     "prettier",
     "plugin:jsx-a11y/recommended",
     "plugin:prettier/recommended",
-    "plugin:sonarjs/recommended",
-    "plugin:security/recommended",
     "plugin:react-hooks/recommended",
   ],
-
-
   rules: {
+    'react/function-component-definition': ['error', {
+      namedComponents: 'function-expression',
+      unnamedComponents: 'function-expression',
+    }],
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-explicit-any": "error",
     "react/react-in-jsx-scope": "off",
