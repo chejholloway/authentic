@@ -32,3 +32,4 @@ package-lock.json
 .eslintcache
 /src/app/__snapshots__
 /src/components/**/__snapshots__
+.env
