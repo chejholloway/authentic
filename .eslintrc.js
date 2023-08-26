@@ -1,79 +1,23 @@
-module.exports = {
-  root: true,
-  parserOptions: {
-    ecmaVersion: 2020,
-    sourceType: "module",
-    ecmaFeatures: {
-      jsx: true,
+{
+    "env": {
+        "browser": true,
+        "es2021": true
     },
-  },
-
-  env: {
-    browser: true,
-    node: true,
-    es6: true,
-  },
-
-  settings: {
-    react: {
-      version: "detect",
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
     },
-    "import/resolver": {
-      node: {
-        extensions: [".ts", ".tsx"],
-      },
-    },
-  },
-
-  plugins: ["@typescript-eslint"],
-  extends: [
-    "plugin:@typescript-eslint/recommended",
-    "airbnb",
-    "prettier",
-    "plugin:jsx-a11y/recommended",
-    "plugin:prettier/recommended",
-    "plugin:react-hooks/recommended",
-  ],
-  rules: {
-    'react/function-component-definition': ['error', {
-      namedComponents: 'function-expression',
-      unnamedComponents: 'function-expression',
-    }],
-    "prettier/prettier": [
-      "error",
-      {
-        "endOfLine": "auto"
-      }
+    "plugins": [
+        "react",
+        "@typescript-eslint"
     ],
-    "@typescript-eslint/no-unused-vars": "error",
-    "@typescript-eslint/no-explicit-any": "error",
-    "react/react-in-jsx-scope": "off",
-    "react/jsx-filename-extension": [
-      1,
-      {
-        extensions: [".ts", ".tsx", ".js", ".jsx"],
-      },
-    ],
-    "react/jsx-props-no-spreading": "off",
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        js: "never",
-        jsx: "never",
-        ts: "never",
-        tsx: "never",
-      },
-    ],
-    "jsx-a11y/anchor-is-valid": [
-      "error",
-      {
-        components: ["Link"],
-        specialLink: ["hrefLeft", "hrefRight"],
-        aspects: ["invalidHref", "preferButton"],
-      },
-    ],
-    "no-nested-ternary": "off",
-    "import/prefer-default-export": "off",
-  },
+    "rules": {}
 }
