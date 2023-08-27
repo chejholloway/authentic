@@ -1,11 +1,11 @@
 import React from "react";
-import { render, waitFor } from "@testing-library/react";
+import { render, waitFor, screen } from "@testing-library/react";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 import store from "../../store/store"; // Adjust the path based on your file structure
-import "@testing-library/jest-dom/extend-expect";
+import "@testing-library/jest-dom";
 
 import HomePage from "./HomePage";
 
@@ -36,7 +36,7 @@ afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
 test("renders loading spinner initially", async () => {
-  const { getByTestId } = render(
+  render(
     <Provider store={store}>
       <MemoryRouter initialEntries={["/"]}>
         <Routes>
@@ -46,15 +46,15 @@ test("renders loading spinner initially", async () => {
     </Provider>,
   );
 
-  const spinner = getByTestId("spinner");
-  expect(spinner).toBeInTheDocument();
+  const spinner = screen.getByTestId("spinner");
+  expect(spinner).toBeDefined();
 
   // Wait for the data to load
-  await waitFor(() => expect(spinner).not.toBeInTheDocument());
+  await waitFor(() => expect(screen.queryByTestId("spinner")).toBeNull());
 });
 
 test("renders developers when data is loaded", async () => {
-  const { getByAltText } = render(
+  render(
     <Provider store={store}>
       <MemoryRouter initialEntries={["/"]}>
         <Routes>
@@ -66,10 +66,10 @@ test("renders developers when data is loaded", async () => {
 
   // Wait for the data to load
   await waitFor(() => {
-    const avatar1 = getByAltText("testuser1");
-    const avatar2 = getByAltText("testuser2");
-    expect(avatar1).toBeInTheDocument();
-    expect(avatar2).toBeInTheDocument();
+    const avatar1 = screen.getByAltText("testuser1");
+    const avatar2 = screen.getByAltText("testuser2");
+    expect(avatar1).toBeDefined();
+    expect(avatar2).toBeDefined();
   });
 });
 

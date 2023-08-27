@@ -1,13 +1,14 @@
+import "@testing-library/jest-dom/extend-expect";
 import React from "react";
 import { render } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
 
 import FollowersList from "./FollowersList";
 
 // Mock react-router-dom and @material-tailwind/react components
 jest.mock("react-router-dom", () => ({
-  Link: ({ children }) => children,
+  Link: ({ children }: { children: React.ReactNode }) => children,
 }));
+
 jest.mock("@material-tailwind/react", () => ({
   Avatar: () => null,
   Typography: () => null,

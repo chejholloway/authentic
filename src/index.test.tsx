@@ -39,6 +39,6 @@ describe("App", () => {
     );
 
     await screen.findByText('user0'); // Adjust as needed
-    expect(screen.getByText('mocked-avatar-url')).toBeInTheDocument();
+    expect(screen.getByText('mocked-avatar-url')).toBeDefined();
   }); */
 });

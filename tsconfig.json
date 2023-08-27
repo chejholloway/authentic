@@ -7,9 +7,8 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
+      "es6",
+      "dom"
     ],
     "module": "esnext",
     "moduleResolution": "node",

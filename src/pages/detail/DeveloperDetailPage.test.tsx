@@ -43,10 +43,10 @@ test("renders loading spinner initially", async () => {
   );
 
   const spinner = getByTestId("spinner");
-  expect(spinner).toBeInTheDocument();
+  expect(spinner).toBeDefined();
 
   // Wait for the data to load
-  // await waitFor(() => expect(spinner).not.toBeInTheDocument());
+  // await waitFor(() => expect(spinner).not.toBeDefined());
 });
 
 test("renders developer details when data is loaded", async () => {

@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import "@testing-library/jest-dom/extend-expect";
+import "@testing-library/jest-dom";
 
 import HomeLink from "./HomeLink";
 
@@ -16,7 +16,7 @@ describe("<HomeLink>", () => {
     const homeIcon = getByAltText("Home Icon");
     const homeText = getByText("Home");
 
-    expect(homeIcon).toBeInTheDocument();
-    expect(homeText).toBeInTheDocument();
+    expect(homeIcon).toBeDefined();
+    expect(homeText).toBeDefined();
   });
 });

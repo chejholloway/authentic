@@ -9,7 +9,7 @@ describe("OctocatIcon", () => {
     const { container } = render(<OctocatIcon />);
     const imgElement = container.querySelector("img");
 
-    // expect(imgElement).toBeInTheDocument();
+    // expect(imgElement).toBeDefined();
     expect(imgElement?.alt).toBe("Octocat Icon");
   });
 

@@ -27,7 +27,7 @@ const ReposList: React.FC<ReposListProps> = ({ developer, repos }) => {
       {repos ? (
         repos.map((repo) => (
           <div key={repo.id}>
-            <Link to={repo.html_url}>
+            <Link to={repo?.html_url || ""}>
               <Card className="m-2">
                 <List>
                   <ListItem>
