@@ -7,4 +7,7 @@ module.exports = withMT({
     extend: {},
   },
   plugins: [],
+  variants: {
+    width: ["responsive", "hover", "focus"]
+  }
 });

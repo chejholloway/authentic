@@ -50,7 +50,7 @@ const HomePage: React.FC = () => {
                   <Link to={`/developer/${developer.login}`}>
                     <Card>
                       <List>
-                        <ListItem>
+                        <ListItem className="hover: xl:max-w-[220px] lg:max-w-[175px] md:max-w-[167px] sm:max-w-[180px]">
                           <ListItemPrefix>
                             <Avatar
                               variant="circular"
