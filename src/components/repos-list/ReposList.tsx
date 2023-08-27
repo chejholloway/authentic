@@ -34,7 +34,7 @@ const ReposList: React.FC<ReposListProps> = ({ developer, repos }) => {
                       <Avatar
                         variant="circular"
                         alt={developer?.login}
-                        src={developer?.avatar_url}
+                        src="/assets/images/git-svgrepo-com.svg"
                       />
                     </ListItemPrefix>
                     <Typography
