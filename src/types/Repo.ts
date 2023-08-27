@@ -7,4 +7,5 @@ export default interface Repo {
   full_name: string;
   private: boolean;
   owner?: Owner;
+  html_url?: string;
 }

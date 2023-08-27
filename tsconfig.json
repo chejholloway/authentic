@@ -4,9 +4,6 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "include": [
-      "src"
-    ],
     "isolatedModules": true,
     "jsx": "react-jsx",
     "lib": [
@@ -24,8 +21,7 @@
     "target": "es5",
     "types": [
       "node",
-      "jest",
-      "@testing-library/jest-dom"
+      "jest"
     ]
   }
 }
