@@ -6,10 +6,10 @@ import OctocatIcon from "../../icons/OctocatIcon";
 const NavbarIconContainer: React.FC = () => {
   return (
     <div className="flex items-center">
-      <Link to="/" className="cursor-pointer">
+      <Link to="https://github.com/" className="cursor-pointer">
         <div className="flex justify-center">
-          <GithubIcon />
           <OctocatIcon />
+          <GithubIcon />
         </div>
       </Link>
     </div>

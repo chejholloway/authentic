@@ -45,13 +45,18 @@ const DeveloperDetailPage: React.FC = () => {
         <WhiteContainer className="animate-slide-in">
           <LayOutGrid>
             <Column>
-              <ReposList developer={developer} repos={repos} />
-            </Column>
-            <Column>
+              <img
+                className={`w-full mx-auto`}
+                src={developer.avatar_url}
+                alt={developer.login}
+              />
               <GrayText>
                 <FollowersList followers={fiveFollowers} />
                 <OrgsList developer={developer} org={orgs} />
               </GrayText>
+            </Column>
+            <Column>
+              <ReposList developer={developer} repos={repos} />
             </Column>
           </LayOutGrid>
         </WhiteContainer>

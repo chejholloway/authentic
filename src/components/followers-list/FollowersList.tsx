@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Avatar, Typography } from "@material-tailwind/react";
 
 import Follower from "../../types/Follower";
+import { GrayText, Title } from "./Follower.styles"
 
 interface FollowersListProps {
   followers: Follower[] | undefined;
@@ -10,15 +11,15 @@ interface FollowersListProps {
 
 const FollowersList: React.FC<FollowersListProps> = ({ followers }) => {
   return (
-    <div className="text-gray-700">
-      <h3 className="text-center">
+    <GrayText>
+      <Title>
         <Typography className="font-normal">Followers</Typography>
-      </h3>
+      </Title>
       <div className="flex flex-wrap space-x-4">
         {followers ? (
           followers.map((follower) => (
             <div key={follower.id}>
-              <Link to={"/"}>
+              <Link to={follower?.html_url}>
                 <Avatar
                   variant="circular"
                   title={`${follower?.login}'s Avatar`}
@@ -32,7 +33,7 @@ const FollowersList: React.FC<FollowersListProps> = ({ followers }) => {
           <p>No followers available.</p>
         )}
       </div>
-    </div>
+    </GrayText>
   );
 };
 
