@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { Spinner } from "@material-tailwind/react";
 
 import {
   useGetDeveloperDetailsQuery,
@@ -34,7 +35,7 @@ const DeveloperDetailPage: React.FC = () => {
   const { data: followers } = useGetDeveloperFollowersQuery(username);
 
   if (!developer || !repos || !orgs || !followers) {
-    return <div>Loading...</div>;
+    return <Spinner />;
   }
   const sixFollowers = selectRandomFollowers(followers, 6);
 

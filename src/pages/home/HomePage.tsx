@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {
+  Avatar,
+  Card,
   List,
   ListItem,
   ListItemPrefix,
-  Avatar,
-  Card,
+  Spinner
 } from "@material-tailwind/react";
 import {
   Main,
@@ -34,7 +35,7 @@ const HomePage: React.FC = () => {
   }
 
   if (!developers) {
-    return <div>Loading...</div>;
+    return <Spinner />;
   }
   return (
     <>
