@@ -18,6 +18,7 @@ import {
 } from "../../styles/TwinStyles.styles";
 import { v4 as uuidv4 } from "uuid";
 
+import { Footer } from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
 import Developer from "../../types/Developer";
 import { useGetTopDevelopersQuery } from "../../services/github";
@@ -71,6 +72,7 @@ const HomePage: React.FC = () => {
           </WhiteContainer>
         </MainContent>
       </Main>
+      <Footer />
     </>
   );
 };

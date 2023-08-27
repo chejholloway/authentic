@@ -13,6 +13,7 @@ import ReposList from "../../components/repos-list/ReposList";
 import OrgsList from "../../components/orgs-list/OrgsList";
 import FollowersList from "../../components/followers-list/FollowersList";
 import Follower from "../../types/Follower";
+import { Footer } from "../../components/footer/Footer";
 
 import {
   Column,
@@ -66,6 +67,7 @@ const DeveloperDetailPage: React.FC = () => {
           </LayOutGrid>
         </WhiteContainer>
       </Main>
+      <Footer />
     </>
   );
 };
