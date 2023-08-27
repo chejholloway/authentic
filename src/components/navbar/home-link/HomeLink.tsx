@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import HomeIcon from "../../icons/HomeIcon"
+import HomeIcon from "../../icons/HomeIcon";
 
 const HomeLink: React.FC = () => {
   return (

@@ -7,7 +7,9 @@ interface HomeIconProps {
 }
 
 const HomeIcon: React.FC<HomeIconProps> = ({ className }) => {
-  return <img className={`${className}`} src={home} alt="Home Icon" width="24" />;
+  return (
+    <img className={`${className}`} src={home} alt="Home Icon" width="24" />
+  );
 };
 
 export default HomeIcon;

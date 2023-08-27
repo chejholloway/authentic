@@ -1,13 +1,11 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import Developer from './Developer'; // Import the Developer interface
+import Developer from "./Developer"; // Import the Developer interface
 
-describe('Developer interface', () => {
-  it('should have the required properties', () => {
+describe("Developer interface", () => {
+  it("should have the required properties", () => {
     const developer: Developer = {
-      avatar_url: 'https://example.com/avatar.png',
-      login: 'testUser',
-      twitter_username: '@testser'
+      avatar_url: "https://example.com/avatar.png",
+      login: "testUser",
+      twitter_username: "@testser",
     };
 
     expect(developer.avatar_url).toBeDefined();

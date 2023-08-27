@@ -1,28 +1,30 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import Follower from './Follower'; // Import the Follower interface
+import Follower from "./Follower"; // Import the Follower interface
 
-describe('Follower interface', () => {
-  it('should have the required properties', () => {
+describe("Follower interface", () => {
+  it("should have the required properties", () => {
     const follower: Follower = {
-      login: 'followerUser',
+      login: "followerUser",
       id: 123,
-      node_id: 'abc123',
-      avatar_url: 'https://example.com/follower-avatar.png',
-      gravatar_id: 'def456',
-      url: 'https://api.github.com/users/followerUser',
-      html_url: 'https://github.com/followerUser',
-      followers_url: 'https://api.github.com/users/followerUser/followers',
-      following_url: 'https://api.github.com/users/followerUser/following{/other_user}',
-      gists_url: 'https://api.github.com/users/followerUser/gists{/gist_id}',
-      starred_url: 'https://api.github.com/users/followerUser/starred{/owner}{/repo}',
-      subscriptions_url: 'https://api.github.com/users/followerUser/subscriptions',
-      organizations_url: 'https://api.github.com/users/followerUser/orgs',
-      repos_url: 'https://api.github.com/users/followerUser/repos',
-      events_url: 'https://api.github.com/users/followerUser/events{/privacy}',
-      received_events_url: 'https://api.github.com/users/followerUser/received_events',
-      type: 'User',
-      site_admin: false
+      node_id: "abc123",
+      avatar_url: "https://example.com/follower-avatar.png",
+      gravatar_id: "def456",
+      url: "https://api.github.com/users/followerUser",
+      html_url: "https://github.com/followerUser",
+      followers_url: "https://api.github.com/users/followerUser/followers",
+      following_url:
+        "https://api.github.com/users/followerUser/following{/other_user}",
+      gists_url: "https://api.github.com/users/followerUser/gists{/gist_id}",
+      starred_url:
+        "https://api.github.com/users/followerUser/starred{/owner}{/repo}",
+      subscriptions_url:
+        "https://api.github.com/users/followerUser/subscriptions",
+      organizations_url: "https://api.github.com/users/followerUser/orgs",
+      repos_url: "https://api.github.com/users/followerUser/repos",
+      events_url: "https://api.github.com/users/followerUser/events{/privacy}",
+      received_events_url:
+        "https://api.github.com/users/followerUser/received_events",
+      type: "User",
+      site_admin: false,
     };
 
     expect(follower.login).toBeDefined();

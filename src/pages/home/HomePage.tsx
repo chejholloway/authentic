@@ -6,7 +6,7 @@ import {
   List,
   ListItem,
   ListItemPrefix,
-  Spinner
+  Spinner,
 } from "@material-tailwind/react";
 import {
   Main,
@@ -27,7 +27,7 @@ const HomePage: React.FC = () => {
     limit: 20,
   });
 
-  function truncateString(str:string , maxLength:number) {
+  function truncateString(str: string, maxLength: number) {
     if (str.length > maxLength) {
       return str.substring(0, maxLength - 3) + "...";
     }
@@ -58,7 +58,9 @@ const HomePage: React.FC = () => {
                               src={developer.avatar_url}
                             />
                           </ListItemPrefix>
-                          <p className="text-xs">{truncateString(developer.login, 12)}</p>
+                          <p className="text-xs">
+                            {truncateString(developer.login, 12)}
+                          </p>
                         </ListItem>
                       </List>
                     </Card>

@@ -6,7 +6,7 @@ import "@testing-library/jest-dom/extend-expect";
 import ErrorPage from "./ErrorPage";
 
 test("renders ErrorPage component", () => {
-  const { getByText, getByTestId } = render(
+  const { getByTestId } = render(
     <MemoryRouter initialEntries={["/error"]}>
       <Routes>
         <Route path="/error" element={<ErrorPage />} />

@@ -1,5 +1,5 @@
 import React from "react";
-import { render, waitFor } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import { rest } from "msw";
@@ -50,7 +50,7 @@ test("renders loading spinner initially", async () => {
 });
 
 test("renders developer details when data is loaded", async () => {
-  const { getByTestId, getByAltText } = render(
+  render(
     <Provider store={store}>
       <MemoryRouter initialEntries={["/developers/testuser"]}>
         <Routes>
@@ -62,5 +62,4 @@ test("renders developer details when data is loaded", async () => {
       </MemoryRouter>
     </Provider>,
   );
-
 });

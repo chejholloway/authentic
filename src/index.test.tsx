@@ -1,20 +1,20 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import { Provider } from 'react-redux';
-import { ThemeProvider } from '@material-tailwind/react';
-import configureMockStore from 'redux-mock-store';
-import App from './app/App';
+import React from "react";
+import { createRoot } from "react-dom/client";
+import { Provider } from "react-redux";
+import { ThemeProvider } from "@material-tailwind/react";
+import configureMockStore from "redux-mock-store";
+import App from "./app/App";
 
 // Mock store
 const mockStore = configureMockStore();
 
-describe('App', () => {
+describe("App", () => {
   const initialState = {}; // Mock initial state here
   const store = mockStore(initialState);
 
-  it('renders without crashing', () => {
-    const app = document.createElement('div');
-    app.id = 'root';
+  it("renders without crashing", () => {
+    const app = document.createElement("div");
+    app.id = "root";
     document.body.appendChild(app);
 
     const root = createRoot(app);
@@ -24,7 +24,7 @@ describe('App', () => {
         <ThemeProvider>
           <App />
         </ThemeProvider>
-      </Provider>
+      </Provider>,
     );
   });
 
