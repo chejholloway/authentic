@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Avatar } from "@material-tailwind/react";
 
 import Follower from "../../types/Follower";
-import { GrayText, Title } from "./FollowersList.styles";
+import { GrayText, Title } from "../../styles/TwinStyles.styles";
 
 interface FollowersListProps {
   followers: Follower[] | undefined;

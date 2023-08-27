@@ -9,13 +9,13 @@ import {
   Spinner,
 } from "@material-tailwind/react";
 import {
-  Main,
-  WhiteContainer,
-  Developers,
   DeveloperGrid,
+  Developers,
+  Main,
   MainContent,
   Title,
-} from "./HomePage.styles";
+  WhiteContainer,
+} from "../../styles/TwinStyles.styles";
 import { v4 as uuidv4 } from "uuid";
 
 import Navbar from "../../components/navbar/Navbar";

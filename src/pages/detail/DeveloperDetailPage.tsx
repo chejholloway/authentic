@@ -20,7 +20,7 @@ import {
   LayOutGrid,
   Main,
   WhiteContainer,
-} from "./DeveloperPage.styles";
+} from "../../styles/TwinStyles.styles";
 
 const selectRandomFollowers = (followers: Follower[], count: number) => {
   const shuffledFollowers = followers.slice().sort(() => 0.5 - Math.random());

@@ -12,7 +12,7 @@ import {
 import Org from "../../types/Org";
 import Developer from "../../types/Developer";
 
-import { Title } from "./OrgsList.styles";
+import { Title } from "../../styles/TwinStyles.styles";
 
 interface OrgsListProps {
   developer: Developer | undefined;

@@ -8,7 +8,7 @@ import {
   Card,
   Typography,
 } from "@material-tailwind/react";
-import { Title } from "./ReposList.styles";
+import { Title } from "../../styles/TwinStyles.styles";
 
 import Repo from "../../types/Repo";
 import Developer from "../../types/Developer";
