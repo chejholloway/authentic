@@ -36,7 +36,7 @@ const DeveloperDetailPage: React.FC = () => {
   if (!developer || !repos || !orgs || !followers) {
     return <div>Loading...</div>;
   }
-  const fiveFollowers = selectRandomFollowers(followers, 6);
+  const sixFollowers = selectRandomFollowers(followers, 6);
 
   return (
     <>
@@ -51,7 +51,9 @@ const DeveloperDetailPage: React.FC = () => {
                 alt={developer.login}
               />
               <GrayText>
-                <FollowersList followers={fiveFollowers} />
+                <FollowersList followers={sixFollowers} />
+              </GrayText>
+              <GrayText>
                 <OrgsList developer={developer} org={orgs} />
               </GrayText>
             </Column>

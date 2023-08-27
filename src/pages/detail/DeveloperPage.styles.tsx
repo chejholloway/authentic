@@ -6,4 +6,4 @@ export const MainContent = tw.div`flex items-center justify-center min-h-screen 
 export const WhiteContainer = tw.div`bg-white mt-24 p-8 shadow-lg transform`;
 export const LayOutGrid = tw.div`grid grid-cols-2 gap-8`;
 export const Column = tw.div`col-span-1`;
-export const GrayText = tw.div`text-gray-700`;
+export const GrayText = tw.div`text-gray-700 py-8`;
