@@ -1,0 +1,49 @@
+# MSW Handlers
+
+This module contains the mock handlers for MSW (Mock Service Worker) used for simulating API responses during testing.
+
+```jsx
+/* eslint-enable no-undef */
+
+/**
+ * Mock handler for getting a list of users.
+ * @param {Request} req - The request object.
+ * @param {ResponseResolver<DefaultRequestBody>} res - The response resolver.
+ * @param {RestContext<{}>} ctx - The REST context.
+ * @returns {Promise<ResponseResolver<DefaultRequestBody>>} The response resolver.
+ */
+const getUsersHandler = (req, res, ctx) => {
+  const limit = Number(req.url.searchParams.get("limit"));
+  const mockData = []; // Mock data array
+  for (let i = 0; i < limit; i++) {
+    mockData.push({ login: `user${i}`, id: i });
+  }
+  return res(ctx.json(mockData));
+};
+
+/**
+ * Mock handler for getting user details.
+ * @param {Request} req - The request object.
+ * @param {ResponseResolver<DefaultRequestBody>} res - The response resolver.
+ * @param {RestContext<{}>} ctx - The REST context.
+ * @returns {Promise<ResponseResolver<DefaultRequestBody>>} The response resolver.
+ */
+const getUserDetailsHandler = (req, res, ctx) => {
+  const username = req.params.username;
+  const mockResponse = { login: username, avatar_url: "mocked-avatar-url" };
+  return res(ctx.json(mockResponse));
+};
+
+// Add more mock handlers for other endpoints as needed
+
+export const handlers = [
+  rest.get(
+    `${process.env.REACT_APP_GITHUB_API_BASE_URL}${process.env.REACT_APP_GITHUB_USERS_QUERY}`,
+    getUsersHandler,
+  ),
+  rest.get(
+    `${process.env.REACT_APP_GITHUB_API_BASE_URL}/users/:username`,
+    getUserDetailsHandler,
+  ),
+  // Add more mock handlers for other endpoints as needed
+];

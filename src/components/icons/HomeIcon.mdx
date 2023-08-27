@@ -1,0 +1,30 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import HomeIcon from "../../icons/HomeIcon";
+
+/**
+ * HomeLink component provides a navigation link to the home page with a home icon.
+ */
+const HomeLink: React.FC = () => {
+  return (
+    <div className="flex space-x-2">
+      {/* Link to the home page */}
+      <Link
+        to="/"
+        className="text-black mr-4 hover:text-gray-400 transition duration-300"
+      >
+        {/* Display HomeIcon component */}
+        <HomeIcon />
+      </Link>
+      {/* Text link to the home page */}
+      <Link
+        to="/"
+        className="text-black mr-4 hover:text-gray-400 transition duration-300"
+      >
+        Home
+      </Link>
+    </div>
+  );
+};
+
+export default HomeLink;

@@ -1,0 +1,12 @@
+# MSW Server Setup
+
+This module initializes and exports the MSW server with the provided mock handlers.
+
+```jsx
+/**
+ * Initializes the MSW server with provided mock handlers.
+ * @type {import("msw").SetupServer}
+ */
+const server = setupServer(...handlers);
+
+export { server };
