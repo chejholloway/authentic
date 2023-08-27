@@ -1,16 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {
+  Avatar,
+  Card,
   List,
   ListItem,
   ListItemPrefix,
-  Avatar,
-  Card,
   Typography,
 } from "@material-tailwind/react";
 
 import Org from "../../types/Org";
 import Developer from "../../types/Developer";
+
+import { Title } from "./OrgsList.styles";
 
 interface OrgsListProps {
   developer: Developer | undefined;
@@ -21,13 +23,13 @@ const OrgsList: React.FC<OrgsListProps> = ({ org }) => {
   return (
     <div className="text-gray-700">
       <h3 className="text-center">
-        <Typography className="font-normal">Organizations</Typography>
+        <Title className="font-normal">Organizations</Title>
       </h3>
       {org ? (
         org.map((org) => (
           <div key={org.id}>
-            <Link to={"/"}>
-              <Card className="w-full">
+            <Link to={org.repos_url}>
+              <Card className="m-2">
                 <List>
                   <ListItem>
                     <ListItemPrefix>

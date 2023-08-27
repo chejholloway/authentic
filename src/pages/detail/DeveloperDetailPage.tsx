@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Spinner } from "@material-tailwind/react";
 
 import {
@@ -45,12 +45,14 @@ const DeveloperDetailPage: React.FC = () => {
       <Main>
         <WhiteContainer className="animate-slide-in">
           <LayOutGrid>
-            <Column>
-              <img
-                className={`w-full mx-auto`}
-                src={developer.avatar_url}
-                alt="Avatar"
-              />
+            <Column className="divide-y divide-solid">
+              <Link to={`https://github.com/${developer.login}`}>
+                <img
+                  className={`w-full mx-auto`}
+                  src={developer.avatar_url}
+                  alt="Avatar"
+                />
+              </Link>
               <GrayText>
                 <FollowersList followers={sixFollowers} />
               </GrayText>

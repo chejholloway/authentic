@@ -8,6 +8,7 @@ import {
   Card,
   Typography,
 } from "@material-tailwind/react";
+import { Title } from "./ReposList.styles";
 
 import Repo from "../../types/Repo";
 import Developer from "../../types/Developer";
@@ -21,19 +22,20 @@ const ReposList: React.FC<ReposListProps> = ({ developer, repos }) => {
   return (
     <div className="text-gray-700">
       <h3 className="text-center">
-        <Typography className="font-normal">Repositories</Typography>
+        <Title className="font-normal">Repositories</Title>
       </h3>
       {repos ? (
         repos.map((repo) => (
           <div key={repo.id}>
-            <Link to={"/"}>
-              <Card className="w-full">
+            <Link to={repo.html_url}>
+              <Card className="m-2">
                 <List>
                   <ListItem>
                     <ListItemPrefix>
                       <Avatar
                         variant="circular"
                         alt={developer?.login}
+                        className="outline"
                         src="/assets/images/git-svgrepo-com.svg"
                       />
                     </ListItemPrefix>

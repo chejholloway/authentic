@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Avatar, Typography } from "@material-tailwind/react";
+import { Avatar } from "@material-tailwind/react";
 
 import Follower from "../../types/Follower";
 import { GrayText, Title } from "./FollowersList.styles";
@@ -12,13 +12,11 @@ interface FollowersListProps {
 const FollowersList: React.FC<FollowersListProps> = ({ followers }) => {
   return (
     <GrayText>
-      <Title>
-        <Typography className="font-normal">Followers</Typography>
-      </Title>
+      <Title className="font-normal">Followers</Title>
       <div className="flex flex-wrap space-x-4">
         {followers ? (
           followers.map((follower) => (
-            <div key={follower.id}>
+            <div key={follower.id} className="m-4">
               <Link to={follower?.html_url}>
                 <Avatar
                   variant="circular"
