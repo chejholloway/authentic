@@ -22,9 +22,7 @@ interface OrgsListProps {
 const OrgsList: React.FC<OrgsListProps> = ({ org }) => {
   return (
     <div className="text-gray-700">
-      <h3 className="text-center">
-        <Title className="font-normal">Organizations</Title>
-      </h3>
+      <Title className="font-normal text-center">Organizations</Title>
       {org ? (
         org.map((org) => (
           <div key={org.id}>

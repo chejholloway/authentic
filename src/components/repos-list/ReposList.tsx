@@ -21,16 +21,14 @@ interface ReposListProps {
 const ReposList: React.FC<ReposListProps> = ({ developer, repos }) => {
   return (
     <div className="text-gray-700">
-      <h3 className="text-center">
-        <Title className="font-normal">Repositories</Title>
-      </h3>
+      <Title className="font-normal text-center">Repositories</Title>
       {repos ? (
         repos.map((repo) => (
           <div key={repo.id}>
             <Link to={repo?.html_url || ""}>
               <Card className="m-2">
                 <List>
-                  <ListItem>
+                  <ListItem className="hover: xl:max-w-full lg:max-w-full md:max-w-[345px] sm:max-w-[75px]">
                     <ListItemPrefix>
                       <Avatar
                         variant="circular"
@@ -42,7 +40,7 @@ const ReposList: React.FC<ReposListProps> = ({ developer, repos }) => {
                     <Typography
                       variant="small"
                       color="gray"
-                      className="font-normal"
+                      className="font-normal text-xs text-gray"
                     >
                       {repo.name}
                     </Typography>
