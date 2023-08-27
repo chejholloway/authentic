@@ -6,8 +6,16 @@ import {
   ListItemPrefix,
   Avatar,
   Card,
-  Typography,
 } from "@material-tailwind/react";
+import {
+  Main,
+  WhiteContainer,
+  Developers,
+  DeveloperGrid,
+  MainContent,
+  Title,
+} from "./HomePage.styles";
+import { v4 as uuidv4 } from "uuid";
 
 import Navbar from "../../components/navbar/Navbar";
 import Developer from "../../types/Developer";
@@ -24,15 +32,15 @@ const HomePage: React.FC = () => {
   return (
     <>
       <Navbar />
-      <div className="container mx-auto p-4">
-        <div className="flex items-center justify-center min-h-screen py-8">
-          <div className="bg-white mt-8 p-8 shadow-lg transform translate-y-20 animate-slide-in">
-            <h1 className="text-center">Top Github Developers</h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <Main>
+        <MainContent>
+          <WhiteContainer className="translate-y-20 animate-slide-in">
+            <Title>Top Github Developers</Title>
+            <DeveloperGrid>
               {developers?.items.map((developer: Developer) => (
-                <div key={developer.login}>
+                <Developers key={uuidv4()}>
                   <Link to={`/developer/${developer.login}`}>
-                    <Card className="w-full">
+                    <Card className="w-half">
                       <List>
                         <ListItem>
                           <ListItemPrefix>
@@ -42,23 +50,17 @@ const HomePage: React.FC = () => {
                               src={developer.avatar_url}
                             />
                           </ListItemPrefix>
-                          <Typography
-                            variant="small"
-                            color="gray"
-                            className="font-normal"
-                          >
-                            {developer.login}
-                          </Typography>
+                          <p className="font-normal ">{developer.login}</p>
                         </ListItem>
                       </List>
                     </Card>
                   </Link>
-                </div>
+                </Developers>
               ))}
-            </div>
-          </div>
-        </div>
-      </div>
+            </DeveloperGrid>
+          </WhiteContainer>
+        </MainContent>
+      </Main>
     </>
   );
 };
