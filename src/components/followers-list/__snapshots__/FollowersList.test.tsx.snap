@@ -6,13 +6,19 @@ exports[`<FollowersList> should render component 1`] = `
     class="css-818d2q"
   >
     <h1
-      class="css-qhut37"
-    />
+      class="font-normal css-qhut37"
+    >
+      Followers
+    </h1>
     <div
       class="flex flex-wrap space-x-4"
     >
-      <div />
-      <div />
+      <div
+        class="m-4"
+      />
+      <div
+        class="m-4"
+      />
     </div>
   </div>
 </DocumentFragment>
@@ -24,13 +30,19 @@ exports[`<FollowersList> should render component with props 1`] = `
     class="css-818d2q"
   >
     <h1
-      class="css-qhut37"
-    />
+      class="font-normal css-qhut37"
+    >
+      Followers
+    </h1>
     <div
       class="flex flex-wrap space-x-4"
     >
-      <div />
-      <div />
+      <div
+        class="m-4"
+      />
+      <div
+        class="m-4"
+      />
     </div>
   </div>
 </DocumentFragment>
