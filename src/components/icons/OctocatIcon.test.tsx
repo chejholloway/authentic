@@ -1,20 +1,22 @@
-import { render } from '@testing-library/react';
-import React from 'react';
-import octocat from "../../assets/images/github-octocat-svgrepo-com.svg";
+import React from "react";
+import { render } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
+
 import OctocatIcon from "./OctocatIcon";
 
-jest.mock("../../assets/images/github-octocat-svgrepo-com.svg");
-
-describe('<OctocatIcon>', () => {
-  it('should render component', () => {
+describe("OctocatIcon", () => {
+  it("should render OctocatIcon component", () => {
     const { container } = render(<OctocatIcon />);
+    const imgElement = container.querySelector("img");
 
-    expect(container).toMatchSnapshot();
+    // expect(imgElement).toBeInTheDocument();
+    expect(imgElement?.alt).toBe("Octocat Icon");
   });
 
-  it('should render component with props', () => {
-    const { container } = render(<OctocatIcon className="dummy-class" />);
+  it("should apply custom className", () => {
+    const { container } = render(<OctocatIcon className="custom-class" />);
+    const imgElement = container.querySelector("img");
 
-    expect(container).toMatchSnapshot();
+    expect(imgElement?.classList.contains("custom-class")).toBe(true);
   });
 });

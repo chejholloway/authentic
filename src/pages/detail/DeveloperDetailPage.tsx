@@ -35,7 +35,7 @@ const DeveloperDetailPage: React.FC = () => {
   const { data: followers } = useGetDeveloperFollowersQuery(username);
 
   if (!developer || !repos || !orgs || !followers) {
-    return <Spinner />;
+    return <Spinner data-testid="spinner" />;
   }
   const sixFollowers = selectRandomFollowers(followers, 6);
 
@@ -49,7 +49,7 @@ const DeveloperDetailPage: React.FC = () => {
               <img
                 className={`w-full mx-auto`}
                 src={developer.avatar_url}
-                alt={developer.login}
+                alt="Avatar"
               />
               <GrayText>
                 <FollowersList followers={sixFollowers} />

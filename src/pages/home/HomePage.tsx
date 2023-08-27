@@ -35,7 +35,7 @@ const HomePage: React.FC = () => {
   }
 
   if (!developers) {
-    return <Spinner />;
+    return <Spinner data-testid="spinner" />;
   }
   return (
     <>

@@ -11,7 +11,7 @@ const OctocatIcon: React.FC<OctocatIconProps> = ({ className }) => {
     <img
       className={`h-10 object-cover ${className}`}
       src={octocat}
-      alt="Github Octocat"
+      alt="Octocat Icon"
     />
   );
 };
