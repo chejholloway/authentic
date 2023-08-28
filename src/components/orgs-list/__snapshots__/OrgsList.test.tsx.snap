@@ -5,15 +5,11 @@ exports[`<OrgsList> should render component 1`] = `
   <div
     class="text-gray-700"
   >
-    <h3
-      class="text-center"
+    <h1
+      class="font-normal text-center css-qhut37"
     >
-      <h1
-        class="font-normal css-qhut37"
-      >
-        Organizations
-      </h1>
-    </h3>
+      Organizations
+    </h1>
     <div />
     <div />
   </div>

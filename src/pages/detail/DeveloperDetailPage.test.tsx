@@ -5,7 +5,6 @@ import { Provider } from "react-redux";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 import store from "../../store/store";
-import "@testing-library/jest-dom/extend-expect";
 
 import DeveloperDetailPage from "./DeveloperDetailPage";
 
