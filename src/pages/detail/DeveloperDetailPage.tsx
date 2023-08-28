@@ -38,7 +38,7 @@ const DeveloperDetailPage: React.FC = () => {
   if (!developer || !repos || !orgs || !followers) {
     return <Spinner data-testid="spinner" />;
   }
-  const sixFollowers = selectRandomFollowers(followers, 6);
+  const fiveFollowers = selectRandomFollowers(followers, 5);
 
   return (
     <>
@@ -55,7 +55,7 @@ const DeveloperDetailPage: React.FC = () => {
                 />
               </Link>
               <GrayText>
-                <FollowersList followers={sixFollowers} />
+                <FollowersList followers={fiveFollowers} />
               </GrayText>
               <GrayText>
                 <OrgsList developer={developer} org={orgs} />
