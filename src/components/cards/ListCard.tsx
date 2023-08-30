@@ -1,24 +1,32 @@
-import React from "react";
+/*eslint no-unused-vars: "off"*/
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import React, { ReactNode } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import { Card, List, ListItem } from "@material-tailwind/react";
 
-interface LinkCardProps<T> {
+interface ListCardProps<T, U extends ReactNode> {
   to: string;
   item: T;
-  // eslint-disable-next-line no-unused-vars
-  renderItem: (item: T) => React.ReactNode;
+  renderItem: (item: T) => ReactNode;
+  cardItem: (item: T) => U;
 }
 
-function LinkCard<T>({ to, item, renderItem }: LinkCardProps<T>) {
+function ListCard<T, U extends ReactNode>({
+  to,
+  item,
+  // eslint-disable-next-line no-unused-vars
+  renderItem,
+  cardItem,
+}: ListCardProps<T, U>) {
   return (
     <RouterLink to={to}>
       <Card className="m-2">
         <List>
-          <ListItem>{renderItem(item)}</ListItem>
+          <ListItem>{cardItem(item)}</ListItem>
         </List>
       </Card>
     </RouterLink>
   );
 }
 
-export default LinkCard;
+export default ListCard;

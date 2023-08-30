@@ -1,34 +1,30 @@
 import React from "react";
-
 import Follower from "../../types/Follower";
-import ListCard from "../cards/ListCard";
 import FollowerCard from "../cards/FollowerCard";
-import { GrayText, Title } from "../../styles/TwinStyles.styles";
+import GenericList from "../generic-list/GenericList";
 
 interface FollowersListProps {
   followers: Follower[] | undefined;
 }
 
 const FollowersList: React.FC<FollowersListProps> = ({ followers }) => {
+  const mapToLink = (follower: Follower) => follower.html_url;
+  const renderItem = (follower: Follower) => (
+    <FollowerCard follower={follower} />
+  );
+  const renderCard = (follower: Follower) => (
+    <FollowerCard follower={follower} />
+  );
+
   return (
-    <GrayText>
-      <Title className="font-normal">Followers</Title>
-      <div className="flex flex-wrap space-x-4">
-        {followers ? (
-          followers.map((follower) => (
-            <div key={follower.id} className="m-4">
-              <ListCard
-                to={follower.html_url}
-                item={follower}
-                renderItem={(follower) => <FollowerCard follower={follower} />}
-              />
-            </div>
-          ))
-        ) : (
-          <p>No followers available.</p>
-        )}
-      </div>
-    </GrayText>
+    <GenericList
+      title="Followers"
+      data={followers}
+      renderItem={renderItem}
+      emptyMessage="No followers available."
+      mapToLink={mapToLink}
+      renderCard={renderCard}
+    />
   );
 };
 
