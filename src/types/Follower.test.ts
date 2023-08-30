@@ -9,7 +9,7 @@ describe("Follower interface", () => {
       avatar_url: "https://example.com/follower-avatar.png",
       gravatar_id: "def456",
       url: "https://api.github.com/users/followerUser",
-      html_url: "https://github.com/followerUser",
+      html_url: "{process.env.REACT_APP_GITHUB_URL}/followerUser",
       followers_url: "https://api.github.com/users/followerUser/followers",
       following_url:
         "https://api.github.com/users/followerUser/following{/other_user}",

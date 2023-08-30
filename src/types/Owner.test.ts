@@ -9,7 +9,7 @@ describe("Owner interface", () => {
       avatar_url: "https://example.com/owner-avatar.png",
       gravatar_id: "gravatar123",
       url: "https://api.github.com/users/example",
-      html_url: "https://github.com/example",
+      html_url: "{process.env.REACT_APP_GITHUB_URL}/example",
       followers_url: "https://api.github.com/users/example/followers",
       following_url:
         "https://api.github.com/users/example/following{/other_user}",

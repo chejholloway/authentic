@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-undef
 module.exports = {
   env: {
     browser: true,
@@ -18,6 +19,8 @@ module.exports = {
         "./src/styled.d.ts",
         "./src/services/github.ts",
         "./src/mocks/handlers.ts",
+        "./src/components/orgs-list/OrgsList.tsx",
+        "./src/pages/detail/DeveloperDetailPage.tsx",
       ],
       rules: {
         "@typescript-eslint/no-explicit-any": "off",
