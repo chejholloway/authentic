@@ -24,7 +24,7 @@ const mockFollowers = [
     avatar_url: "https://avatars.githubusercontent.com/u/851?v=4",
     gravatar_id: "",
     url: "https://api.github.com/users/mountain",
-    html_url: "https://github.com/mountain",
+    html_url: "{process.env.REACT_APP_GITHUB_URL}/mountain",
     followers_url: "https://api.github.com/users/mountain/followers",
     following_url:
       "https://api.github.com/users/mountain/following{/other_user}",
@@ -46,7 +46,7 @@ const mockFollowers = [
     avatar_url: "https://avatars.githubusercontent.com/u/1014?v=4",
     gravatar_id: "",
     url: "https://api.github.com/users/sunfmin",
-    html_url: "https://github.com/sunfmin",
+    html_url: "{process.env.REACT_APP_GITHUB_URL}/sunfmin",
     followers_url: "https://api.github.com/users/sunfmin/followers",
     following_url:
       "https://api.github.com/users/sunfmin/following{/other_user}",

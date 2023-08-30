@@ -146,7 +146,7 @@ For Organizations:
 tsx
 
 ```tsx
-<LinkCard to={`https://github.com/${org.login}`} item={org} renderItem={(org) => <OrgCard org={org} />} />
+<LinkCard to={`${process.env.REACT_APP_GITHUB_URL}/${org.login}`} item={org} renderItem={(org) => <OrgCard org={org} />} />
 ```
 
 For Followers:

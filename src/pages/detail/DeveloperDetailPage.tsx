@@ -47,7 +47,9 @@ const DeveloperDetailPage: React.FC = () => {
         <WhiteContainer className="animate-slide-in">
           <LayOutGrid>
             <Column className="divide-y divide-solid">
-              <Link to={`https://github.com/${developer.login}`}>
+              <Link
+                to={`${process.env.REACT_APP_GITHUB_URL}/${developer.login}`}
+              >
                 <img
                   className={`w-full mx-auto`}
                   src={developer.avatar_url}

@@ -142,7 +142,7 @@ interface OrgsListProps {
 
 const OrgsList: React.FC<OrgsListProps> = ({ org }) => {
   const renderItem = (org: Org) => (
-    <Link to={`https://github.com/${org.login}`}>
+    <Link to={`${process.env.REACT_APP_GITHUB_URL}/${org.login}`}>
       <Card className="m-2">
         <List>
           <ListItem>

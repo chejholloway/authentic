@@ -26,7 +26,7 @@ const OrgsList: React.FC<OrgsListProps> = ({ org }) => {
       {org ? (
         org.map((org) => (
           <div key={org.id}>
-            <Link to={`https://github.com/${org.login}`}>
+            <Link to={`${process.env.REACT_APP_GITHUB_URL}/${org.login}`}>
               <Card className="m-2">
                 <List>
                   <ListItem>
