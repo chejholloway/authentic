@@ -43,7 +43,7 @@ const HomePage: React.FC = () => {
       <Navbar />
       <Main>
         <MainContent>
-          <WhiteContainer className="translate-y-20 animate-slide-in">
+          <WhiteContainer className="animate-slide-in">
             <Title>Top Github Developers</Title>
             <DeveloperGrid>
               {developers?.items.map((developer: Developer) => (

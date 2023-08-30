@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Spinner } from "@material-tailwind/react";
 
 import {
@@ -13,6 +13,7 @@ import ReposList from "../../components/repos-list/ReposList";
 import OrgsList from "../../components/orgs-list/OrgsList";
 import FollowersList from "../../components/followers-list/FollowersList";
 import Follower from "../../types/Follower";
+import AvatarLink from "../../components/avatar/AvatarLink";
 import { Footer } from "../../components/footer/Footer";
 
 import {
@@ -47,15 +48,7 @@ const DeveloperDetailPage: React.FC = () => {
         <WhiteContainer className="animate-slide-in">
           <LayOutGrid>
             <Column className="divide-y divide-solid">
-              <Link
-                to={`${process.env.REACT_APP_GITHUB_URL}/${developer.login}`}
-              >
-                <img
-                  className={`w-full mx-auto`}
-                  src={developer.avatar_url}
-                  alt="Avatar"
-                />
-              </Link>
+              <AvatarLink developer={developer} />
               <FollowersList followers={fiveFollowers} />
               <OrgsList developer={developer} org={orgs} />
             </Column>

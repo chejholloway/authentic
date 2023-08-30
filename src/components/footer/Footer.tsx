@@ -1,12 +1,15 @@
 import React from "react";
 import { Typography } from "@material-tailwind/react";
+import { FooterStyles } from "../../styles/TwinStyles.styles";
+
+const FooterText = "© 2023 Made with ❤️ by Che' J. Holloway";
 
 export function Footer() {
   return (
-    <footer className="bg-black w-full text-center">
+    <FooterStyles>
       <Typography color="blue-gray" className="font-normal text-center">
-        &copy; 2023 Made with ❤️ by Che&apos; J. Holloway
+        {FooterText}
       </Typography>
-    </footer>
+    </FooterStyles>
   );
 }

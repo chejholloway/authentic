@@ -1,4 +1,4 @@
-/*eslint no-unused-vars: "off"*/
+/* eslint no-unused-vars: "off" */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { ReactNode } from "react";
 import { Link as RouterLink } from "react-router-dom";
