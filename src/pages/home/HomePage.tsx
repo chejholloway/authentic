@@ -19,6 +19,7 @@ import {
 import { v4 as uuidv4 } from "uuid";
 
 import { Footer } from "../../components/footer/Footer";
+import Pagination from "../../components/pagination/Pagination";
 import Navbar from "../../components/navbar/Navbar";
 import Developer from "../../types/Developer";
 import { useGetTopDevelopersQuery } from "../../services/github";
@@ -69,6 +70,11 @@ const HomePage: React.FC = () => {
                 </Developers>
               ))}
             </DeveloperGrid>
+            <div className="flex justify-center mt-8">
+              <div className="p-2">
+                <Pagination />
+              </div>
+            </div>
           </WhiteContainer>
         </MainContent>
       </Main>
