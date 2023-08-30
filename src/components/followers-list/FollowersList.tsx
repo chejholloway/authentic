@@ -1,8 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Avatar } from "@material-tailwind/react";
 
 import Follower from "../../types/Follower";
+import ListCard from "../cards/ListCard";
+import FollowerCard from "../cards/FollowerCard";
 import { GrayText, Title } from "../../styles/TwinStyles.styles";
 
 interface FollowersListProps {
@@ -17,14 +17,11 @@ const FollowersList: React.FC<FollowersListProps> = ({ followers }) => {
         {followers ? (
           followers.map((follower) => (
             <div key={follower.id} className="m-4">
-              <Link to={follower?.html_url}>
-                <Avatar
-                  variant="circular"
-                  title={`${follower?.login}'s Avatar`}
-                  alt={follower?.login}
-                  src={follower?.avatar_url}
-                />
-              </Link>
+              <ListCard
+                to={follower.html_url}
+                item={follower}
+                renderItem={(follower) => <FollowerCard follower={follower} />}
+              />
             </div>
           ))
         ) : (

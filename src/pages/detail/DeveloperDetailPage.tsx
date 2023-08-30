@@ -56,12 +56,8 @@ const DeveloperDetailPage: React.FC = () => {
                   alt="Avatar"
                 />
               </Link>
-              <GrayText>
-                <FollowersList followers={fiveFollowers} />
-              </GrayText>
-              <GrayText>
-                <OrgsList developer={developer} org={orgs} />
-              </GrayText>
+              <FollowersList followers={fiveFollowers} />
+              <OrgsList developer={developer} org={orgs} />
             </Column>
             <Column>
               <ReposList developer={developer} repos={repos} />
