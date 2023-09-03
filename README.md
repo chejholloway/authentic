@@ -1,7 +1,7 @@
 # Front End Interview Project
 
 Hello! If you're reading this, that means you've passed our initial phone screen. Congrats! We're excited to get to know
-you more and see if you'd be a good fit for Real.
+you more and see if you'd be a good fit..
 
 We would like you to implement the following project to help us assess your real-world programming knowledge.
 
